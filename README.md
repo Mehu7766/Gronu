@@ -1,2 +1,277 @@
-# Gronu
-my dropservice agency from complete web development
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gronu - Creative Dropservicing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Playfair Display', serif;
+    }
+    body {
+      background-color: #ff0055;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: white;
+      color: #ff0055;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .nav-btns {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-btns button {
+      background: transparent;
+      color: #ff0055;
+      border: 2px solid #ff0055;
+      padding: 10px 18px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      outline-offset: 3px;
+    }
+    .nav-btns button:hover, .nav-btns button:focus {
+      background: #ff0055;
+      color: white;
+      transform: scale(1.05);
+      outline: none;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #ff0055;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .hero button {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 12px 24px;
+      border-radius: 14px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      outline-offset: 3px;
+    }
+    .hero button:hover, .hero button:focus {
+      background: white;
+      color: #ff0055;
+      transform: scale(1.05);
+      outline: none;
+    }
+    section {
+      padding: 60px 30px;
+      text-align: center;
+    }
+    .services, .achievements {
+      background: white;
+      color: #ff0055;
+    }
+    .services h2, .achievements h2, .about h2, .contact h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    .service-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .box {
+      border: 2px solid #ff0055;
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      color: #ff0055;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 700;
+      font-size: 18px;
+      min-height: 110px;
+      justify-content: center;
+    }
+    .box small {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #ff0055;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    .box:hover {
+      background: #ff0055;
+      color: white;
+    }
+    footer {
+      background: #fff;
+      color: #ff0055;
+      text-align: center;
+      padding: 20px;
+      font-weight: 600;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      border: none;
+      padding: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      cursor: pointer;
+    }
+    .whatsapp-button:hover, .whatsapp-button:focus {
+      transform: scale(1.1);
+      outline: none;
+    }
+    .whatsapp-button img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(1) contrast(1);
+    }
+    .contact a {
+      color: #ff0055;
+      text-decoration: underline;
+      font-weight: bold;
+      background: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin: 5px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .contact a:hover, .contact a:focus {
+      background: #ff0055;
+      color: white;
+      outline: none;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      .nav-btns {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .service-boxes {
+        grid-template-columns: 1fr;
+      }
+      .box {
+        min-height: 90px;
+        font-size: 16px;
+      }
+      .box small {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Gronu</div>
+    <nav class="nav-btns">
+      <button onclick="scrollToSection('services')">Services</button>
+      <button onclick="scrollToSection('contact')">Contact</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Help People Grow Their Brand & Niche</h1>
+    <p>At Gronu, we empower creators and entrepreneurs by delivering eye-catching logos, powerful video edits, and digital designs that amplify their brand voice and establish authority in their niche.</p>
+    <button onclick="scrollToSection('about')">Learn More</button>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+      <div class="box" onclick="contactWhatsApp('logo')">Logo Design<small>For these services contact on WhatsApp</small></div>
+      <div class="box" onclick="contactWhatsApp('video')">Video Editing<small>For these services contact on WhatsApp</small></div>
+      <div class="box" onclick="contactWhatsApp('thumbnail')">YouTube Thumbnails<small>For these services contact on WhatsApp</small></div>
+    </div>
+  </section>
+
+  <section class="achievements">
+    <h2>Our Achievements</h2>
+    <p>500+ happy clients, 1,200+ designs delivered, 5-star ratings from across the globe.</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Gronu</h2>
+    <p>We are a bold and creative agency helping creators build standout visual content. Our team blends creativity with precision to deliver results.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:gronu.0fficial@gmail.com">gronu.0fficial@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/gronu.offical?igsh=YWg0ZnFsMThudXQ5" target="_blank">@gronu.official</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Gronu. All Rights Reserved.
+  </footer>
+
+  <a class="whatsapp-button" href="https://wa.me/919330625257?text=Hii%20Mehul%2C%20I%20want%20to%20talk%20you%20about%20work" target="_blank">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
+  </a>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function contactWhatsApp(service) {
+      let msg = "";
+      const number = "919330625257";
+      switch (service) {
+        case "logo":
+          msg = "Hii Mehul, can you design a logo?";
+          break;
+        case "video":
+          msg = "Hii Mehul, can you edit a video?";
+          break;
+        case "thumbnail":
+          msg = "Hii Mehul, can you design a thumbnail?";
+          break;
+        default:
+          msg = "Hii Mehul, I want to talk you about work";
+      }
+      const url = https://wa.me/${number}?text=${encodeURIComponent(msg)};
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
